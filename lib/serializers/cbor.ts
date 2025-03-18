@@ -1,4 +1,4 @@
-import { decode, encode } from 'cbor-x';
+import {encode, decode} from 'cbor-redux';
 
 import {Message} from "../messages/message";
 import {Serializer, ToMessage} from "./serializer";
@@ -6,12 +6,13 @@ import {Serializer, ToMessage} from "./serializer";
 
 class CBORSerializer implements Serializer {
     serialize(message: Message): Uint8Array {
-        return encode(message.marshal());
+        return new Uint8Array(encode(message.marshal()));
     }
 
     deserialize(data: Uint8Array): Message {
-        const wampMsg: any[] = decode(data);
-        return ToMessage(wampMsg)
+        const buffer = data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength);
+        const wampMsg: any[] = decode(buffer);
+        return ToMessage(wampMsg);
     }
 }
 

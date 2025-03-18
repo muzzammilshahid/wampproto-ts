@@ -18,7 +18,7 @@
   "author": "Omer Akram <omer@thing.com>",
   "license": "MIT",
   "dependencies": {
-    "cbor-x": "^1.5.9",
+    "cbor-redux": "^1.0.0",
     "msgpackr": "^1.10.2",
     "tweetnacl": "^1.0.3",
     "typescript": "^5.4.5"
