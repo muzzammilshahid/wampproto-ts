@@ -1,4 +1,5 @@
 import {createHmac, randomBytes, timingSafeEqual, pbkdf2Sync} from 'crypto';
+import { Buffer } from 'buffer';
 
 import {Authenticate, AuthenticateFields} from "../messages/authenticate";
 import {Challenge} from "../messages/challenge";

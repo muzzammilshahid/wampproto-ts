@@ -1,4 +1,5 @@
 import * as nacl from 'tweetnacl';
+import { Buffer } from 'buffer';
 
 import {Authenticate, AuthenticateFields} from "../messages/authenticate";
 import {Challenge} from "../messages/challenge";
